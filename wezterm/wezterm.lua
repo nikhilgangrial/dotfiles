@@ -31,8 +31,8 @@ config.font_size = 12.5
 -- window
 config.window_decorations = "None"
 config.adjust_window_size_when_changing_font_size = false
-config.initial_cols = 180
-config.initial_rows = 50
+config.initial_cols = 90
+config.initial_rows = 32
 
 -- mouse bindings
 config.mouse_bindings = {
