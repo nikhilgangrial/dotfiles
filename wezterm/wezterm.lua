@@ -6,6 +6,7 @@ config.color_scheme = "Everblush"
 
 config.kde_window_background_blur = true
 config.macos_window_background_blur = 20
+config.enable_tab_bar = false
 
 -- background
 config.background = {
@@ -46,5 +47,47 @@ config.mouse_bindings = {
 		action = wezterm.action.OpenLinkAtMouseCursor,
 	},
 }
+
+-- key bindings
+local k = require("utils.keys")
+
+config.keys = {
+  -- panes
+  k.cmd_to_tmux("d", "%"),
+  k.cmd_to_tmux("D", "\""),
+  k.cmd_to_tmux("w", "x"),
+
+  -- move in panes
+  k.cmd_to_tmux("h", "LeftArrow"),
+  k.cmd_to_tmux("l", "RightArrow"),
+  k.cmd_to_tmux("j", "DownArrow"),
+  k.cmd_to_tmux("k", "UpArrow"),
+
+  -- tab management
+  k.cmd_to_tmux("t", "c"),
+
+  -- cycle tabs
+  k.cmd_to_tmux("p", "p"),
+  k.cmd_to_tmux("n", "n"),
+
+  -- tab quick select
+  k.cmd_to_tmux("0", "0"),
+  k.cmd_to_tmux("1", "1"),
+  k.cmd_to_tmux("2", "2"),
+  k.cmd_to_tmux("3", "3"),
+  k.cmd_to_tmux("4", "4"),
+  k.cmd_to_tmux("5", "5"),
+  k.cmd_to_tmux("6", "6"),
+  k.cmd_to_tmux("7", "7"),
+  k.cmd_to_tmux("8", "8"),
+  k.cmd_to_tmux("9", "9"),
+
+  -- cycle Windows
+  k.cmd_to_tmux("P", "P"),
+  k.cmd_to_tmux("N", "N"),
+
+}
+
+config.default_prog = { "tmux", "-u" }
 
 return config
