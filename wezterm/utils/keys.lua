@@ -1,15 +1,24 @@
 local act = require("wezterm").action
 
-local kernel = io.popen("uname");
-local action_key
+local kernel
 
-if kernel == "Darwin" then
-  action_key = "SUPER"
+local handle = io.popen("uname")
+if handle then
+	kernel = handle:read("*a"):gsub("%s+", "")
+  handle:close()
 else
-  action_key = "ALT"
+	kernel = "Windows"
+end
+
+local action_key
+if kernel == "Darwin" then
+	action_key = "SUPER"
+else
+	action_key = "ALT"
 end
 
 M = {}
+M.kernel = kernel
 
 local function tmux_key_table(tmux_key)
 	if type(tmux_key) == "table" then
