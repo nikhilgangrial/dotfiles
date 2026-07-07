@@ -1,0 +1,54 @@
+# ── macOS keybinds ────────────────────────────────────────────────────────────
+# On macOS, Cmd+key doesn't reach tmux. This file remaps super+key to send
+# ESC+key (the Meta/Alt escape sequence) so tmux sees identical M-key sequences
+# as it does natively on Linux. tmux.conf owns all the actual bindings.
+
+# find (Ghostty native action)
+keybind = ctrl+shift+f=unbind
+keybind = super+f=start_search
+
+# Pane management → M-d / M-D / M-w
+keybind = super+d=text:\x1bd
+keybind = super+shift+d=text:\x1bD
+keybind = super+w=text:\x1bw
+
+# Navigate panes → M-h/j/k/l
+keybind = super+h=text:\x1bh
+keybind = super+l=text:\x1bl
+keybind = super+j=text:\x1bj
+keybind = super+k=text:\x1bk
+
+# Windows → M-t / M-T
+keybind = super+t=text:\x1bt
+keybind = super+shift+t=text:\x1bT
+
+# Cycle windows → M-Tab / M-BTab
+keybind = super+tab=text:\x1b\x09
+keybind = super+shift+tab=text:\x1b\x1b[Z
+
+# swap window left/right → M-H / M-L
+keybind = ctrl+shift+h=text:\x1bH
+keybind = ctrl+shift+l=text:\x1bL
+
+# Cycle windows → M-n / M-p
+keybind = super+n=text:\x1bn
+keybind = super+p=text:\x1bp
+
+# Scroll mode → M-u
+keybind = super+u=text:\x1bu
+
+# Cycle sessions → M-N / M-P
+keybind = super+shift+n=text:\x1bN
+keybind = super+shift+p=text:\x1bP
+
+# Window quick-select → M-1…M-0
+keybind = super+one=text:\x1b1
+keybind = super+two=text:\x1b2
+keybind = super+three=text:\x1b3
+keybind = super+four=text:\x1b4
+keybind = super+five=text:\x1b5
+keybind = super+six=text:\x1b6
+keybind = super+seven=text:\x1b7
+keybind = super+eight=text:\x1b8
+keybind = super+nine=text:\x1b9
+keybind = super+zero=text:\x1b0

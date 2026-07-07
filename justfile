@@ -8,19 +8,19 @@ install:
     if command -v brew >/dev/null 2>&1; then \
       echo "Detected Homebrew; installing via brew..."; \
       brew update; \
-      brew install neovim wezterm tmux starship lazygit zoxide lsd btop bat || true; \
-      brew install --cask wezterm || true; \
+      brew install neovim tmux starship lazygit zoxide lsd btop bat || true; \
+      brew install --cask ghostty || true; \
       brew install --cask font-bitstream-vera-sans-mono-nerd-font || true; \
     \
     elif command -v paru >/dev/null 2>&1; then \
       echo "Detected paru; installing via paru..."; \
-      paru -Syu --noconfirm neovim-git wezterm-git tmux starship lazygit zoxide lsd btop bat || true; \
+      paru -Syu --noconfirm neovim-git ghostty tmux starship lazygit zoxide lsd btop bat || true; \
       paru -S --noconfirm wl-clipboard xclip || true; \
       paru --noconfirm ttf-bitstream-vera-mono-nerd || true; \
     \
     elif command -v yay >/dev/null 2>&1; then \
       echo "Detected yay; installing via yay..."; \
-      yay -Syu --noconfirm neovim-git wezterm-git tmux starship lazygit zoxide lsd btop bat || true; \
+      yay -Syu --noconfirm neovim-git ghostty tmux starship lazygit zoxide lsd btop bat || true; \
       yay -S --noconfirm wl-clipboard xclip || true; \
       yay --noconfirm ttf-bitstream-vera-mono-nerd || true; \
     \
@@ -69,8 +69,8 @@ setup-starship:
 setup-fish:
     just setup-config fish
 
-setup-wezterm:
-    just setup-config wezterm
+setup-ghostty:
+    just setup-config ghostty
 
 setup-mise:
     just setup-config mise
@@ -82,7 +82,7 @@ setup-nvim:
 setup-all:
     just setup-starship; \
     just setup-fish; \
-    just setup-wezterm; \
+    just setup-ghostty; \
     just setup-mise; \
     just setup-nvim; \
     just setup-tmux

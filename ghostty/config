@@ -1,0 +1,54 @@
+# ── Ghostty Config ────────────────────────────────────────────────────────────
+# Migrated from wezterm
+
+# Theme
+theme = Everblush
+
+# Font
+font-family = BitstromWera Nerd Font Mono
+font-size = 12
+font-feature = calt
+font-feature = liga
+font-feature = dlig
+font-feature = ss01
+font-feature = ss02
+font-feature = ss03
+font-feature = ss04
+font-feature = ss05
+font-feature = ss06
+font-feature = ss07
+font-feature = ss08
+
+# Window
+# window-decoration = server → use KWin (KDE) decorations instead of libadwaita CSD
+window-decoration = server
+background-opacity = 0.8
+# NOTE: background-blur requires KWin blur effect enabled in
+# System Settings → Appearance → Desktop Effects → Blur
+# On KDE Plasma 6.7+ this may not work: KWin dropped the old kwin_blur Wayland
+# protocol and Ghostty hasn't yet implemented the new ext_background_effect_manager_v1.
+# Track: https://github.com/ghostty-org/ghostty/issues (blur + KDE)
+background-blur = 20
+window-width = 90
+window-height = 32
+
+# GTK/libadwaita chrome — Ghostty uses GTK4+libadwaita even on KDE
+# Hide the GTK title bar (KWin title bar is used instead via window-decoration=server)
+gtk-titlebar = false
+# Hide the tab bar — tmux handles all window/tab management
+gtk-tabs-location = hidden
+
+# Shell — launch tmux automatically
+command = tmux -u
+
+# Mouse
+mouse-hide-while-typing = true
+
+# ── Key Bindings ───────────────────────────────────────────────────────────────
+# Keybinds are split into two files and both are always loaded:
+#   keybinds-linux  — alt+<key>   (Alt key, present on all Linux keyboards)
+#   keybinds-macos  — super+<key> (Command key, present on all Mac keyboards)
+# Both can coexist: Linux has no Command key, macOS won't use Alt for these.
+# Each binding sends Ctrl+b (\x02) + the tmux key to the running tmux session.
+config-file = keybinds-linux
+config-file = keybinds-macos

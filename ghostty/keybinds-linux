@@ -1,0 +1,28 @@
+# ── Linux keybinds ────────────────────────────────────────────────────────────
+# On Linux, Alt+key naturally sends ESC+key to the terminal.
+# tmux sees these as M-key and handles them via tmux.conf.
+# This file only handles things Ghostty must intercept itself.
+
+# find (Ghostty native action)
+keybind = ctrl+shift+f=unbind
+keybind = ctrl+f=start_search
+
+# Unbind Ghostty's built-in alt+1…9=goto_tab so they pass through to tmux
+keybind = alt+one=unbind
+keybind = alt+two=unbind
+keybind = alt+three=unbind
+keybind = alt+four=unbind
+keybind = alt+five=unbind
+keybind = alt+six=unbind
+keybind = alt+seven=unbind
+keybind = alt+eight=unbind
+keybind = alt+nine=unbind
+keybind = alt+zero=unbind
+
+# ctrl+tab / ctrl+shift+tab — Ghostty intercepts these so forward as M-Tab / M-BTab
+keybind = ctrl+tab=unbind
+keybind = ctrl+shift+tab=unbind
+
+# swap window left/right → M-H / M-L
+keybind = ctrl+shift+h=text:\x1bH
+keybind = ctrl+shift+l=text:\x1bL
