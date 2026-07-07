@@ -22,13 +22,9 @@ keybind = super+k=text:\x1bk
 keybind = super+t=text:\x1bt
 keybind = super+shift+t=text:\x1bT
 
-# Cycle windows → M-Tab / M-BTab
-keybind = super+tab=text:\x1b\x09
-keybind = super+shift+tab=text:\x1b\x1b[Z
-
 # swap window left/right → M-H / M-L
-keybind = ctrl+shift+h=text:\x1bH
-keybind = ctrl+shift+l=text:\x1bL
+keybind = super+shift+h=text:\x1bH
+keybind = super+shift+l=text:\x1bL
 
 # Cycle windows → M-n / M-p
 keybind = super+n=text:\x1bn

@@ -22,7 +22,3 @@ keybind = alt+zero=unbind
 # ctrl+tab / ctrl+shift+tab — Ghostty intercepts these so forward as M-Tab / M-BTab
 keybind = ctrl+tab=unbind
 keybind = ctrl+shift+tab=unbind
-
-# swap window left/right → M-H / M-L
-keybind = ctrl+shift+h=text:\x1bH
-keybind = ctrl+shift+l=text:\x1bL
